@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#nav{
+    font-family: 'Inter', sans-serif;
+}
+
+#hero-text{
+    font-family: 'Outfit', sans-serif;
+}
