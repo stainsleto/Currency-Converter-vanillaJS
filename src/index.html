@@ -41,7 +41,7 @@
         </h1>
 
         <p>
-          More that 150 currencies from 200+ countries
+          More than 150 currencies from 200+ countries
         </p>
         <br />
         <p>
@@ -56,7 +56,40 @@
 
 
     </div>
-    
+
+    <!-- Converter -->
+
+    <div class=" text-primary  bg-gray mx-48 h-auto my-10 rounded-lg">
+      <div class="flex flex-row gap-4 justify-center items-center h-36">
+        <section>
+          <h4 class="converter-title font-bold mx-1">Amount</h4>
+          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Amount" />
+        </section>
+
+        <section>
+          <h4 class="converter-title font-bold mx-1">From</h4>
+          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Currency Code" />
+        </section>
+
+        <section>
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mt-6 w-8 h-8 rounded-full p-1 bg-primary text-blue">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M7.5 21L3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5" />
+          </svg>
+          
+        </section>
+
+        <section>
+          <h4 class="converter-title font-bold mx-1">To</h4>
+          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Currency Code" />
+        </section>
+      </div>
+
+      <div class="flex justify-around">
+        <button class="bg-blue rounded p-1">Convert</button>
+      </div>
+
+    </div>
 
 
     <script type="module" src="/main.js"></script>
