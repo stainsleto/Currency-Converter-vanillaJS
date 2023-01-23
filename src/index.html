@@ -63,12 +63,12 @@
       <div class="flex flex-row gap-4 justify-center items-center ">
         <section>
           <h4 class="converter-title font-bold mx-1">Amount</h4>
-          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Amount" />
+          <input class="rounded-md h-8 p-2 text-black" type="number" id="amount" placeholder="Enter the Amount" />
         </section>
 
         <section>
           <h4 class="converter-title font-bold mx-1">From</h4>
-          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Currency Code" />
+          <input class="rounded-md h-8 p-2 text-black" type="text" id="from" placeholder="Enter the Currency Code" />
         </section>
 
         <section>
@@ -81,12 +81,16 @@
 
         <section>
           <h4 class="converter-title font-bold mx-1">To</h4>
-          <input class="rounded-md h-8 p-2" type="number" placeholder="Enter the Currency Code" />
+          <input class="rounded-md h-8 p-2 text-black" type="text" id="to" placeholder="Enter the Currency Code" />
         </section>
 
         <section class="mt-6">
           <button class="bg-blue rounded-lg  text-sm p-2 font-bold" id="convert">Convert</button>
         </section>
+      </div>
+
+      <div>
+        <section id="result">result</section>
       </div>
 
     </div>
@@ -102,20 +106,20 @@
 
       <div class="flex flex-row justify-center  gap-10 text-center mx-40 my-20" >
         <section class="flex flex-col gap-5 justify-center items-center bg-dblue p-5 rounded-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
             <path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z" />
           </svg>
 
           <h3 class="text-lg font-bold">International Transfer</h3>
 
-          <p>Send money online fast,secure and east live tracking and notifications + flexible delivery and payment options</p>
+          <p>Easily send money globally with reliable international money transfer services, ensuring secure transactions and competitive exchange rates.</p>
 
           <button class="border-2 border-solid border-blue rounded-lg p-2">Send Money</button>
           
         </section>
 
         <section class="flex flex-col gap-5 justify-center items-center bg-dblue p-5 rounded-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3v11.25A2.25 2.25 0 006 16.5h2.25M3.75 3h-1.5m1.5 0h16.5m0 0h1.5m-1.5 0v11.25A2.25 2.25 0 0118 16.5h-2.25m-7.5 0h7.5m-7.5 0l-1 3m8.5-3l1 3m0 0l.5 1.5m-.5-1.5h-9.5m0 0l-.5 1.5m.75-9l3-3 2.148 2.148A12.061 12.061 0 0116.5 7.605" />
           </svg>
 
@@ -128,7 +132,7 @@
         </section>
 
         <section class="flex flex-col gap-5 justify-center items-center bg-dblue p-5 rounded-lg">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-16 h-16">
             <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0M3.124 7.5A8.969 8.969 0 015.292 3m13.416 0a8.969 8.969 0 012.168 4.5" />
           </svg>          
 
