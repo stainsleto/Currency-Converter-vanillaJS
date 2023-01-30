@@ -1,39 +1,28 @@
 import './style.css'
 
-document.addEventListener("DOMContentLoaded",()=>{
-  const convertButton = document.getElementById("convert");
-  convertButton.addEventListener('click',() => {
-    const amount = document.getElementById("amount");
-    const from = document.getElementById("form");
-    const to = document.getElementById("to");
-    const result = document.getElementById("result");
+document.addEventListener("DOMContentLoaded", ()=>{
+  document.querySelector("#convert").addEventListener("click",(event)=>{
+      event.preventDefault();
 
-
-    
-      let myHeaders = new Headers();
-      myHeaders.append("apikey", "YFsMiMLODqQlhsTSAaRIrYSdusufryk0");
       
-      var requestOptions = {
-        method: 'GET',
-        redirect: 'follow',
-        headers: myHeaders
-      };
-      
-      const convertApi = fetch(`https://api.apilayer.com/currency_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
-      const apiResponse = convertApi.then(response => response.json());
-      const data = apiResponse.then(daata =>{
-       console.log(daata.result);
+      const to = document.getElementById("to");
+      const from = document.getElementById("from");
+      const amount = document.getElementById("amount");
 
-      })
-      
-    
+      let headers = new Headers();
+      headers.append("apikey","YFsMiMLODqQlhsTSAaRIrYSdusufryk0");
 
+      const requestOptions = {
+          method:"GET",
+          headers,
+      }
+      console.log(`before `)
 
-  });
-  
-
-  
-    
-
+      fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
+          .then(response => response.json())
+          .then(data => {
+              console.log(`The api data is ${data}`)
+              document.querySelector("#result").textContent=`The Exchange Rate is ${data.result.toFixed(2)}`
+          })
+  })
 })
-
