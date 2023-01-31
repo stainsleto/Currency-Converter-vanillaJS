@@ -1,3 +1,4 @@
+import { data } from 'autoprefixer';
 import './style.css'
 
 document.addEventListener("DOMContentLoaded", ()=>{
@@ -21,8 +22,14 @@ document.addEventListener("DOMContentLoaded", ()=>{
       fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
           .then(response => response.json())
           .then(data => {
-              console.log(`The api data is ${data}`)
+              console.log(data)
               document.querySelector("#result").textContent=`The Exchange Rate is ${data.result.toFixed(2)}`
           })
   })
 })
+
+// work on this to display the content 
+
+if (data.length != 0 ){
+    document.querySelector('result-box').style.display = "block"   
+}
