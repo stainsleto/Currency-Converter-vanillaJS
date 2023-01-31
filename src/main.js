@@ -1,35 +1,37 @@
-import { data } from 'autoprefixer';
 import './style.css'
 
+const to = document.getElementById("to");
+const from = document.getElementById("from");
+const amount = document.getElementById("amount");
+const resultBox = document.getElementById("result-box");
+const result = document.getElementById("result");
+const loading = document.getElementById("loading")
+
+
+
 document.addEventListener("DOMContentLoaded", ()=>{
-  document.querySelector("#convert").addEventListener("click",(event)=>{
-      event.preventDefault();
+  document.querySelector("#convert").addEventListener("click",converter)
 
-      
-      const to = document.getElementById("to");
-      const from = document.getElementById("from");
-      const amount = document.getElementById("amount");
-
-      let headers = new Headers();
-      headers.append("apikey","YFsMiMLODqQlhsTSAaRIrYSdusufryk0");
-
-      const requestOptions = {
-          method:"GET",
-          headers,
-      }
-      console.log(`before `)
-
-      fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.valueAsNumber}`, requestOptions)
-          .then(response => response.json())
-          .then(data => {
-              console.log(data)
-              document.querySelector("#result").textContent=`The Exchange Rate is ${data.result.toFixed(2)}`
-          })
-  })
 })
 
-// work on this to display the content 
 
-if (data.length != 0 ){
-    document.querySelector('result-box').style.display = "block"   
+
+async function converter(){
+    var myHeaders = new Headers();
+    myHeaders.append("apikey", "YFsMiMLODqQlhsTSAaRIrYSdusufryk0");
+
+    var requestOptions = {
+    method: 'GET',
+    redirect: 'follow',
+    headers: myHeaders
+    };
+
+    const apiFetch = await fetch(`https://api.apilayer.com/exchangerates_data/convert?to=${to.value}&from=${from.value}&amount=${amount.value}`, requestOptions);
+    let response = await apiFetch.json();
+    let data = await response.result.toFixed(2);
+    console.log(response);
+    resultBox.style.display = "block"   
+    result.textContent = `${amount.value} ${from.value} is ${data} ${to.value}`
+    
+
 }

@@ -17,3 +17,11 @@
 #convert{
     font-family: 'Inter', sans-serif;
 }
+
+#result{
+    font-family: 'Inter', sans-serif;
+}
+
+#loading{
+    display:none;
+}
