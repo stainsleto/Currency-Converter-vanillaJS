@@ -5,14 +5,20 @@ const from = document.getElementById("from");
 const amount = document.getElementById("amount");
 const resultBox = document.getElementById("result-box");
 const result = document.getElementById("result");
-const loading = document.getElementById("loading")
-
-
-
+const loading = document.getElementById("loading");
 document.addEventListener("DOMContentLoaded", ()=>{
-  document.querySelector("#convert").addEventListener("click",converter)
+  document.querySelector("#convert").addEventListener("click",() =>{
+
+    // if(resultBox.style.display === "none"){
+    //   loading.style.display = "block"
+    // }
+
+    converter()
+
+  })
 
 })
+
 
 
 
