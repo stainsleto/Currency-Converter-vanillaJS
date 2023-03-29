@@ -10,11 +10,12 @@ document.addEventListener("DOMContentLoaded", ()=>{
   
   document.querySelector("#convert").addEventListener("click",() =>{
 
-  converter()
-   
     
 
+    converter()
+
   })
+
 
 })
 
@@ -38,7 +39,9 @@ async function converter(){
     console.log(response);
     resultBox.style.display = "block"  
     result.textContent = `${amount.value} ${from.value} is ${data} ${to.value}`
-    
+    if (resultBox.style.display == "block"){
+      loading.style.display = "none" 
+   }
     
     
 
