@@ -10,6 +10,13 @@ module.exports = {
         "gray" : "#c5c5c554",
         "dblue" : "#181449",
         
+      },
+      screens :{
+
+        'sm':{'min': '350px', 'max': '750px'},
+
+        'md': {'min': '750px', 'max': '1060px'},
+
       }
     },
   },

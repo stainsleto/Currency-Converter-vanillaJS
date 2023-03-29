@@ -7,13 +7,12 @@ const resultBox = document.getElementById("result-box");
 const result = document.getElementById("result");
 const loading = document.getElementById("loading");
 document.addEventListener("DOMContentLoaded", ()=>{
+  
   document.querySelector("#convert").addEventListener("click",() =>{
 
-    // if(resultBox.style.display === "none"){
-    //   loading.style.display = "block"
-    // }
-
-    converter()
+  converter()
+   
+    
 
   })
 
@@ -23,6 +22,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
 
 
 async function converter(){
+    loading.style.display = "block"
     var myHeaders = new Headers();
     myHeaders.append("apikey", "YFsMiMLODqQlhsTSAaRIrYSdusufryk0");
 
@@ -36,8 +36,10 @@ async function converter(){
     let response = await apiFetch.json();
     let data = await response.result.toFixed(2);
     console.log(response);
-    resultBox.style.display = "block"   
+    resultBox.style.display = "block"  
     result.textContent = `${amount.value} ${from.value} is ${data} ${to.value}`
+    
+    
     
 
 }
